@@ -28,7 +28,7 @@ func main() {
 	mc := modbus.NewClient(h)
 	results, err := mc.ReadHoldingRegisters(0, 2) // データサイズ
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("mc.ReadHoldingRegisters", err)
 	}
 
 	humidity := results[0:2]
